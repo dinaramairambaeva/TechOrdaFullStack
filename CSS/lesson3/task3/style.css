@@ -1,0 +1,46 @@
+@import url("reset.css");
+
+.parent{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.parent *{
+    margin: 10px;
+}
+
+.grandparent{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.icon-number{
+    min-width: 150px;
+    min-height: 150px;
+    color: #C4C4C4;
+    font-size: 40px;
+    border: 3px solid #000;
+    border-radius: 100%;
+    border-color: #C4C4C4;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content button{
+    text-transform: uppercase;
+    font-size: medium;
+    background-color: #9CA1CC;
+    color: #fff;
+    border: none;
+    border-radius: 15%;
+    padding: 5px 15px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,48 @@
+@import url("reset.css");
+
+html{
+    background-color: rgba(241, 126, 112, 0.15);
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.parent{
+    display: inline-flex;
+    margin: 200px 
+}
+
+.child{
+    margin: 30px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.child img{
+    width: fit-content;
+    height: 250px;
+    object-fit: cover;
+}
+
+.content{
+    background-color: white;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.content *{
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+h4{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content p{
+    color: #31B6B0;
+}

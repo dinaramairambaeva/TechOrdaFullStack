@@ -1,0 +1,45 @@
+@import url("reset.css");
+
+body{
+    background-image: url("backgroud.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.headline{
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-family:'Times New Roman';
+}
+
+.mediumfont{
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-family:'Times New Roman';
+    margin: 10px;
+}
+
+.highlighted{
+    width: fit-content;
+    background-color: #bc6f65;
+    margin: auto;
+}
+
+
+.cursive{
+    margin: 10px;
+    color: #000;
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+}
+
+.lined{
+    text-decoration: line-through;
+}

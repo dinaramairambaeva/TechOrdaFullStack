@@ -1,0 +1,19 @@
+@import url("reset.css");
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgb(145, 83, 83);
+    color: white;
+    width: 100%;
+    text-align: center;
+    max-height: 100px;
+    padding: 25px;
+    font-size: 50px;
+}
+
+p{
+    margin-top: 120px;
+    font-size: 20px;
+}
