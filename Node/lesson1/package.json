@@ -1,0 +1,11 @@
+{
+  "name": "lesson1",
+  "version": "1.0.0",
+  "description": "My first node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log(1)"
+  },
+  "author": "Dinara Mairambayeva",
+  "license": "ISC"
+}

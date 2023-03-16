@@ -5,7 +5,7 @@ function createAppTitle(title){
     return appTitle;
 }
 
-function createToDoItem(){
+function createProductsItem(){
     let form = document.createElement('form');
     let input = document.createElement('input');
     let buttonWrapper = document.createElement('div');
@@ -13,7 +13,7 @@ function createToDoItem(){
 
     form.classList.add('input-group', 'mb-3');
     input.classList.add('form-control');
-    input.placeholder = 'Enter your task';
+    input.placeholder = 'Enter your product';
     buttonWrapper.classList.add('input-group-append');
     button.classList.add('btn', 'btn-primary');
     button.innerHTML = 'Add'
@@ -29,14 +29,14 @@ function createToDoItem(){
     }
 }
 
-function createToDoList(){
+function createProductsList(){
     let list = document.createElement('ul');
     list.classList.add('list-group');
 
     return list;
 }
 
-function createToDoListItem(name, status){
+function createProductsListItem(name, status){
     let item = document.createElement('li');
     let buttonGroup = document.createElement('div');
     let doneButton = document.createElement('button');
@@ -66,23 +66,23 @@ function createToDoListItem(name, status){
 }
 
 let tasks = [];
-if (localStorage.getItem('todo')){
-    tasks = JSON.parse(localStorage.getItem('todo'));
+if (localStorage.getItem('products')){
+    tasks = JSON.parse(localStorage.getItem('products'));
 }
 
 function draw(){
-    let container = document.getElementById('todo-app');
-    let title = createAppTitle('To Do List');
-    let toDoItem = createToDoItem();
-    let toDoList = createToDoList();
+    let container = document.getElementById('products');
+    let title = createAppTitle('Product List');
+    let productsItem = createProductsItem();
+    let productsList = createProductsList();
 
     container.append(title);
-    container.append(toDoItem.form);
-    container.append(toDoList);
+    container.append(productsItem.form);
+    container.append(productsList);
 
     if (tasks.length > 0){
         for (let i in tasks){
-            let task = createToDoListItem(tasks[i].value, tasks[i].status);
+            let task = createProductsListItem(tasks[i].value, tasks[i].status);
             task.doneButton.addEventListener('click', function(){
                 let classItems = [...task.item.classList];
                 if (classItems.includes('list-group-item-success')){
@@ -98,24 +98,24 @@ function draw(){
                     tasks.splice(i, 1);
                     task.item.remove();
 
-                    localStorage.setItem('todo', JSON.stringify(tasks));
+                    localStorage.setItem('products', JSON.stringify(tasks));
                 }
             })
             
-            toDoList.append(task.item);
+            productsList.append(task.item);
         }
     }
 
-    toDoItem.form.addEventListener('submit', function(event){
+    productsItem.form.addEventListener('submit', function(event){
         event.preventDefault();
 
-        if(!toDoItem.input.value){
+        if(!productsItem.input.value){
             return;
         }
 
-        tasks.push({value: toDoItem.input.value, status: false});
+        tasks.push({value: productsItem.input.value, status: false});
         let taskId = tasks.length - 1;
-        let task = createToDoListItem(toDoItem.input.value, false);
+        let task = createProductsListItem(productsItem.input.value, false);
 
 
         task.doneButton.addEventListener('click', function(){            
@@ -126,20 +126,20 @@ function draw(){
                 tasks[taskId].status = 'true';
             }
             task.item.classList.toggle('list-group-item-success');
-            localStorage.setItem('todo', JSON.stringify(tasks));
+            localStorage.setItem('products', JSON.stringify(tasks));
         })
         task.deleteButton.addEventListener('click', function(){
             if(confirm('Are you sure?')){
                 task.item.remove();
                 tasks.splice(taskId, 1);
 
-                localStorage.setItem('todo', JSON.stringify(tasks));
+                localStorage.setItem('products', JSON.stringify(tasks));
             }
         })
 
-        toDoList.append(task.item);
-        localStorage.setItem('todo', JSON.stringify(tasks));
-        toDoItem.input.value = '';
+        productsList.append(task.item);
+        localStorage.setItem('products', JSON.stringify(tasks));
+        productsItem.input.value = '';
     })
 }
 
